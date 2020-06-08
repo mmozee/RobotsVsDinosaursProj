@@ -22,12 +22,14 @@ namespace RobotsVsDinosaurs
             nameofweaponsinList = new List<Weapon>(); //instantiation has now been completed
             Weapon battleAxe = new Weapon(18, "Bob", "Knifey");//created new weapon
             nameofweaponsinList.Add(battleAxe);
+            Weapon broadSword = new Weapon(27, "Fred", "Stabby");
+            nameofweaponsinList.Add(broadSword);
+            Weapon photonBlaster = new Weapon(85, "Myrtle", "Shooty");
+            nameofweaponsinList.Add(photonBlaster);
 
 
 
-            //photonBlaster
-            //broadSword
-            //weapons.Add(battleAxe);
         }
+           
     }
 }
