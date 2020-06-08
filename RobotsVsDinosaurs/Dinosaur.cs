@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Program
+    class Dinosaur
     {
-        static void Main(string[] args)
-        { //Run Battle
-            Fleet Fleet = new Fleet();
-
-        }
     }
 }
