@@ -9,9 +9,9 @@ namespace RobotsVsDinosaurs
     class Weapon
     {
         //member variable - Has A (weapon has an attack power, name, type of weapon)
-        int attackPower;
-        string name;
-        string typeOfWeapon;
+        public int attackPower;
+        public string name;
+        public string typeOfWeapon;
 
         // constructor - Spawner
         public Weapon(int attackPower, string name, string typeOfWeapon)

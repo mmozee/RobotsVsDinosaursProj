@@ -12,6 +12,10 @@ namespace RobotsVsDinosaurs
         { //Run Battle
             Fleet Fleet = new Fleet();
             Herd Herd = new Herd();
+            Robot Robot = new Robot();
+            Dinosaur Dinosaur = new Dinosaur();
+
+
 
 
         }

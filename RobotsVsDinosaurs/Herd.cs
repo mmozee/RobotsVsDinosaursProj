@@ -8,7 +8,9 @@ namespace RobotsVsDinosaurs
 {
     class Herd
     {// member variables - Has A
-        List<Weapon> nameofweaponsinList2; // The Fleet has 3 weapons to use
+        public List<Weapon> nameofweaponsinList2; // The Fleet has 3 weapons to use
+        public List<Dinosaur> nameofDinosaursinList;
+
 
 
         // constructor - Spawner
@@ -19,14 +21,29 @@ namespace RobotsVsDinosaurs
 
         {
             nameofweaponsinList2 = new List<Weapon>(); //instantiation has now been completed
-            Weapon laser = new Weapon(79, "Gertie", "Shooty");//created new weapon
+            nameofDinosaursinList = new List<Dinosaur>();
+
+            Weapon laser = new Weapon(15, "Gertie", "Shooty");//created new weapon
             nameofweaponsinList2.Add(laser);
-            Weapon flameThrower = new Weapon(49, "Ted", "Firey");
+            Weapon flameThrower = new Weapon(9, "Ted", "Firey");
             nameofweaponsinList2.Add(flameThrower);
-            Weapon tailBlade = new Weapon(62, "Amanda", "Slashy");
+            Weapon tailBlade = new Weapon(15, "Amanda", "Slashy");
             nameofweaponsinList2.Add(tailBlade);
 
+            Dinosaur Roki = new Dinosaur(12, "Amargasaurus", "jawsOfDeath", 63, 91);
+            nameofDinosaursinList.Add(Roki);
+            Dinosaur Night = new Dinosaur(8, "Citipati", "eyesOfSorrow", 71, 52);
+            nameofDinosaursinList.Add(Night);
+            Dinosaur Amelia = new Dinosaur(24, "Utahraptor", "hammerFist", 59, 84);
+            nameofDinosaursinList.Add(Amelia);
 
+            Weapon jawsOfDeath = new Weapon(21, "Teeth");
+            Weapon eyesOfSorrow = new Weapon(11, "Projectile");
+            Weapon hammerFist = new Weapon(18, "Hammer");
+
+            Roki.DinoBites(nameofweaponsinList2[0]);
+            Night.DinoBites(nameofweaponsinList2[1]);
+            Amelia.DinoBites(nameofweaponsinList2[2]);
         }
     }
 }
