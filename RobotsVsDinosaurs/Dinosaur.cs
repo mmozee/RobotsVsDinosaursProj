@@ -41,12 +41,23 @@ namespace RobotsVsDinosaurs
                 healthLevel -= 3;
 
             }
-            else if (RobotToSmash.healthLevel <= 50)
+            else if (RobotToSmash.healthLevel >= 40)
             {
                 Console.WriteLine("Direct Hit, Die Robot Die!");
+                healthLevel += 21;
 
             }
+            else if (RobotToSmash.healthLevel >= 30)
+            {
+                Console.WriteLine("Nanny Nanny Boo Boo, I got You!");
 
+            }
+            else if (RobotToSmash.healthLevel == 0)
+            {
+                Console.WriteLine("That will teach you to Mess with Us");
+                Console.WriteLine("Dinosaurs Rule, We are !VICTORIOUS!!");
+
+            }
         }
     }
 }

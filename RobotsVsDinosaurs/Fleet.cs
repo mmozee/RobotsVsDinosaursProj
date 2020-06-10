@@ -38,14 +38,14 @@ namespace RobotsVsDinosaurs
 
             Robot TinyTim = new Robot(75, "TinyTim", fingerGun, 18, 12);
             nameofRobotsinList.Add(TinyTim);
-            Robot Minerva = new Robot(39, "Minerva", Weapon[1], 76, 60);
+            Robot Minerva = new Robot(39, "Minerva",throwingStars, 76, 60);
             nameofRobotsinList.Add(Minerva);
-            Robot Felix = new Robot(75, "Felix", Weapon,  53, 81);
+            Robot Felix = new Robot(75, "Felix", flamingLasso, 53, 81);
             nameofRobotsinList.Add(Felix);
 
-            Felix.RobotAttacks(nameofweaponsinList[0]);
-            Minerva.RobotAttacks(nameofweaponsinList[1]);
-            TinyTim.RobotAttacks(nameofweaponsinList[2]);
+            //Felix.RobotAttacks(nameofweaponsinList[0], Roki)
+            //Minerva.RobotAttacks(nameofweaponsinList[1], Dinosaur);
+            //TinyTim.RobotAttacks(nameofweaponsinList[2], Dinosaur);
 
 
 

@@ -29,7 +29,7 @@ namespace RobotsVsDinosaurs
         }
 
 
-        // member methods - Can Do 
+        // member methods - Can Do typeOfWeapon
         public void RobotAttacks(Weapon attackingWeapon, Dinosaur DinoToAttack)
 
         {   //Robot will enter the Battlefield
@@ -54,9 +54,18 @@ namespace RobotsVsDinosaurs
                 Console.WriteLine("Direct Hit, Great job Dino Murderer!");
                
             }
-           
+            else if (DinoToAttack.healthLevel <= 30)
+            {
+                Console.WriteLine("You got Me but I'm not out yet, take that!");
 
-                                                 //Console.WriteLine("What weapon was grabbed");
+            }
+            else if (DinoToAttack.healthLevel <= 0)
+            {
+                Console.WriteLine("You may have gotten Me but there is someone bigger and Better to take my place !");
+                Console.WriteLine("Stupid Robot is Victorious");
+
+            }
+            //Console.WriteLine("What weapon was grabbed");
 
 
         }

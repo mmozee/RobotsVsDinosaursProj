@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,57 +17,107 @@ namespace RobotsVsDinosaurs
 
 
         //// constructor - Spawner
-        //public Battlefield()
-        //{
-        //    nameofweaponsinList = new List<Weapon>();
-        //    battleAxe 
-        //    photonBlaster 
-        //    broadSword 
-        //    weapons.Add(battleAxe);
+        public Battlefield()
+        { 
+            theFleet = new Fleet();
+            theHerd = new Herd();
 
-        public void RobotAttackSequence()
+        }
+       
+
+        public void RobotAttackSequence(Dinosaur dinoThatIsGettingAttacked, Robot robotThatIsAttacking)
+
         
 
         {
-            Console.WriteLine("What weapon?");
+            Console.WriteLine("What weapon do You Want, Axe, Blaster, Sword?");
             string input = Console.ReadLine();
             if(input == "Axe")
             {
                 Weapon SecondWeapon = theFleet.nameofweaponsinList[0];
-                theFleet.nameofRobotsinList[0].RobotAttacks(SecondWeapon, theHerd.nameofDinosaursinList[0]);
+                robotThatIsAttacking.RobotAttacks(SecondWeapon, dinoThatIsGettingAttacked);
+                Console.WriteLine("Robot has just attacked!");
             }
             else if(input =="Blaster")
                 {
                 Weapon SecondWeapon = theFleet.nameofweaponsinList[1];
-                theFleet.nameofRobotsinList[1].RobotAttacks(SecondWeapon, theHerd.nameofDinosaursinList[1]);
+                robotThatIsAttacking.RobotAttacks(SecondWeapon, dinoThatIsGettingAttacked);
+                Console.WriteLine("Robot has just attacked!");
             }
             else
                 {
                 Weapon SecondWeapon = theFleet.nameofweaponsinList[2];
-                theFleet.nameofRobotsinList[2].RobotAttacks(SecondWeapon, theHerd.nameofDinosaursinList[2]);
+                robotThatIsAttacking.RobotAttacks(SecondWeapon, dinoThatIsGettingAttacked);
+                Console.WriteLine("Robot has just attacked!");
+              
             }
+            Console.WriteLine(dinoThatIsGettingAttacked.type + " just got attacked and now has "+ dinoThatIsGettingAttacked.healthLevel + " left");
         }
-        public void DinoBitesSequence()
+        public void DinoBitesSequence(Robot RobotThatIsGettingAttacked, Dinosaur DinoThatIsAttacking)
         {
-            Console.WriteLine("What weapon?");
+            Console.WriteLine("What weapon Do You Want, Jaws, Eyes, Fist?");
             string input = Console.ReadLine();
 
             if (input =="Jaws")
             {
                 Weapon Equalizer = theHerd.nameofweaponsinList2[0];
-                theHerd.nameofDinosaursinList[0].DinoBites(theFleet.nameofRobotsinList[0], Equalizer);
+                DinoThatIsAttacking.DinoBites(RobotThatIsGettingAttacked, Equalizer);
+                Console.WriteLine("Dinosaur has just attacked!");
             }
             if (input == "Eyes")
             {
                 Weapon Equalizer = theHerd.nameofweaponsinList2[1];
-                theHerd.nameofDinosaursinList[1].DinoBites(theFleet.nameofRobotsinList[1], Equalizer);
+                DinoThatIsAttacking.DinoBites(RobotThatIsGettingAttacked, Equalizer);
+                Console.WriteLine("Dinosaur has just attacked!");
             }
             if (input == "Fist")
             {
                 Weapon Equalizer = theHerd.nameofweaponsinList2[2];
-                theHerd.nameofDinosaursinList[2].DinoBites(theFleet.nameofRobotsinList[2], Equalizer);
+                DinoThatIsAttacking.DinoBites(RobotThatIsGettingAttacked, Equalizer);
+                Console.WriteLine("Dinosaur has just attacked!");
             }
+            Console.WriteLine(RobotThatIsGettingAttacked.name + "just got spanked and now has" + RobotThatIsGettingAttacked.healthLevel +"remaining");
+        }
+        
+            
 
+        public void RunGame()
+        {
+            Console.WriteLine("Welcome, ARE YOU READY TO RUUUUUMMMMBBBBLEEEEEEE!");
+            string UserInput = Console.ReadLine();
+            if (UserInput == "yes")
+            {
+                Console.WriteLine("Pull up your Grannie Panties and prepare");
+                Console.ReadLine();
+
+                while (theFleet.nameofRobotsinList.Count > 0 && theHerd.nameofDinosaursinList.Count > 0)
+                {
+                    RobotAttackSequence(theHerd.nameofDinosaursinList[0] , theFleet.nameofRobotsinList[0]);
+                    DinoBitesSequence(theFleet.nameofRobotsinList[0] , theHerd.nameofDinosaursinList[0]);
+
+                    if(theHerd.nameofDinosaursinList[0].healthLevel <= 0)
+                    {
+                        theHerd.nameofDinosaursinList.RemoveAt(0);
+
+                        Console.WriteLine("Honor your Dead and Muddle Through!");
+                        Console.ReadLine();
+                    }
+
+                    if (theFleet.nameofRobotsinList[0].healthLevel <= 0)
+                    {
+                        theFleet.nameofRobotsinList.RemoveAt(0);
+                        Console.WriteLine("Your Dead, Get Out the Way");
+                        Console.ReadLine();
+                    }
+                }
+               
+            }
+            else
+            {
+                Console.WriteLine("Go Stand in the Corner Until you grow a Pair!");
+                Console.ReadLine();
+
+            }
         }
 
          

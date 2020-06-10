@@ -30,20 +30,22 @@ namespace RobotsVsDinosaurs
             Weapon tailBlade = new Weapon(15, "Amanda", "Slashy");
             nameofweaponsinList2.Add(tailBlade);
 
-            Dinosaur Roki = new Dinosaur(12, "Amargasaurus", "jawsOfDeath", 63, 91);
+            Weapon jawsOfDeath = new Weapon(21, "jawsOfDeath", "Teeth");
+            Weapon eyesOfSorrow = new Weapon(11, "eyesOfSorrow", "Projectile");
+            Weapon hammerFist = new Weapon(18, "hammerFist", "Hammer");
+
+            Dinosaur Roki = new Dinosaur(12, "Amargasaurus", jawsOfDeath, 63, 91);
             nameofDinosaursinList.Add(Roki);
-            Dinosaur Night = new Dinosaur(8, "Citipati", "eyesOfSorrow", 71, 52);
+            Dinosaur Night = new Dinosaur(8, "Citipati", eyesOfSorrow, 71, 52);
             nameofDinosaursinList.Add(Night);
-            Dinosaur Amelia = new Dinosaur(24, "Utahraptor", "hammerFist", 59, 84);
+            Dinosaur Amelia = new Dinosaur(24, "Utahraptor", hammerFist, 59, 84);
             nameofDinosaursinList.Add(Amelia);
 
-            Weapon jawsOfDeath = new Weapon(21, "Teeth");
-            Weapon eyesOfSorrow = new Weapon(11, "Projectile");
-            Weapon hammerFist = new Weapon(18, "Hammer");
+           
 
-            Roki.DinoBites(nameofweaponsinList2[0]);
-            Night.DinoBites(nameofweaponsinList2[1]);
-            Amelia.DinoBites(nameofweaponsinList2[2]);
+            //Roki.DinoBites(Robot.Felix, nameofweaponsinList2[0]);
+            //Night.DinoBites(nameofweaponsinList2[1]);
+            //Amelia.DinoBites(nameofweaponsinList2[2]);
         }
     }
 }

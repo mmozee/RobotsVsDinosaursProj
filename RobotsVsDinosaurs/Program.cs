@@ -10,10 +10,15 @@ namespace RobotsVsDinosaurs
     {
         static void Main(string[] args)
         { //Run Battle
-            Fleet Fleet = new Fleet();
-            Herd Herd = new Herd();
-            Robot Robot = new Robot();
-            Dinosaur Dinosaur = new Dinosaur();
+            //Fleet Fleet = new Fleet();
+            //Herd Herd = new Herd();
+            //Robot Robot = new Robot();
+            //Dinosaur Dinosaur = new Dinosaur();
+            Battlefield Battlefield = new Battlefield();
+            //Battlefield.RobotAttackSequence();
+            //Battlefield.DinoBitesSequence();
+            Battlefield.RunGame();
+
 
 
 
